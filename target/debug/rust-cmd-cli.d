@@ -1,0 +1,1 @@
+C:\Users\andre\Documents\Rust\rust-cmd-cli\target\debug\rust-cmd-cli.exe: C:\Users\andre\Documents\Rust\rust-cmd-cli\src\main.rs C:\Users\andre\Documents\Rust\rust-cmd-cli\src\mods\highlighter.rs C:\Users\andre\Documents\Rust\rust-cmd-cli\src\mods\login.rs C:\Users\andre\Documents\Rust\rust-cmd-cli\src\mods\math.rs C:\Users\andre\Documents\Rust\rust-cmd-cli\src\mods\mod.rs
