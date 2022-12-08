@@ -7,7 +7,13 @@ edition = "2021"
 
 [dependencies]
 serde_json = { version = "1.0.64", features = ["preserve_order"] }
+serde = { version = "1.0.130", features = ["derive"] }
 tempfile = "3.2.0"
+futures = "0.3"
+http = "0.2.4"
+reqwest = { version = "0.10.9", default_features = false, features = [ "rustls-tls", "json"] }
+rustls = "0.18"
+tokio = { version = "0.2.25", features = ["full"] }
 
 [target.'cfg(linux)'.dependencies]
 ncurses = "5.101.0"
@@ -19,3 +25,7 @@ path = "src/main.rs"
 [[bin]]
 name = "json-convert"
 path = "src/json-convert.rs"
+
+[[bin]]
+name = "spotify"
+path = "src/spotify.rs"
