@@ -62,11 +62,9 @@ async fn main() {
 
 fn print_tracks(tracks: Vec<Track>) {
     for track in tracks {
-        println!("Track: {}", track.name);
+        println!("Artist: {}: Track: {}", track.name, track.album.artists[0].name);
         println!("Album: {}", track.album.name);
-        println!("Artist: {}", track.album.artists[0].name);
-        println!("Popularity: {}", track.popularity);
-        println!("\tSpotify Link: {}", track.external_urls.spotify);
+        println!("Spotify Link: {}", track.external_urls.spotify);
         println!("----");
     }
 }
