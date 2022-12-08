@@ -6,6 +6,16 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+serde_json = { version = "1.0.64", features = ["preserve_order"] }
+tempfile = "3.2.0"
 
 [target.'cfg(linux)'.dependencies]
 ncurses = "5.101.0"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[[bin]]
+name = "json-convert"
+path = "src/json-convert.rs"
