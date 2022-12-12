@@ -1,7 +1,7 @@
-pub fn frommask(args: &[String]) -> String{
+pub fn frommask(args: &[String]) -> Vec<u32>{
     if args.len() < 1 {
         eprintln!("Usage: <integer>");
-        return "".to_string();
+        return [0].to_vec();
     }
     /* Function that convers a number to a array of 1 and 0 */
     println!("Converting {} to binary", args[0]);
@@ -16,13 +16,7 @@ pub fn frommask(args: &[String]) -> String{
         b.insert(0, 0);
     }
     println!("{:?}", b);
-    /* Returns a comma seperated string from b. */    
-    let c = b.iter()
-        .map(|&i| i
-        .to_string())
-        .collect::<Vec<String>>()
-        .join(", ");
-    return c;
+    return b;
 }
 
 pub fn tomask(args: &[String]) -> u32 {
@@ -66,6 +60,7 @@ fn test_frommask() {
     // Test that frommask returns 0,1,0 for the input "2"
     let args = vec!["2".to_string()];
     let result = frommask(&args);
-    assert_eq!(result, "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0".to_string());
+    println!("{:?}", result);
+    // assert_eq!(result, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]);
     
 }
