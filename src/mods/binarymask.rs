@@ -15,6 +15,7 @@ pub fn frommask(args: &[String]) -> Vec<u32>{
     while b.len() < 32 {
         b.insert(0, 0);
     }
+    println!("Converting {} to array of 1 and 0", mask);
     println!("{:?}", b);
     return b;
 }
