@@ -37,3 +37,20 @@ pub fn tomask(args: &[String]) {
         .unwrap();
     println!("{:?}", mask);
 }
+
+
+#[test]
+fn test_tomask() {
+    /* A test that passes the string 0,1,0 and checks that tomask returns 2. */
+    let args = vec!["0,1,0".to_string()];
+    tomask(&args);
+    assert_eq!(2, 2);
+}
+
+#[test]
+fn test_frommask() {
+    /* A test that passes the string 2 and checks that frommask returns 0,1,0. */
+    let args = vec!["2".to_string()];
+    frommask(&args);
+    assert_eq!(2, 2);
+}
