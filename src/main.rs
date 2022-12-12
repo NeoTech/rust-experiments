@@ -4,12 +4,13 @@ use mods::math::*;
 use mods::login::*;
 use mods::highlighter::*;
 use mods::interfaces::*;
+use mods::binarymask::*;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
         eprintln!("Usage: client <command> [<args>]");
-        eprint!("Commands: greet, add, subtract, login, highlight_countries, ncurses(linux), mandelbrot, julia, translatepoint");
+        eprint!("Commands: greet, add, subtract, login, highlight_countries, ncurses(linux), mandelbrot, julia, translatepoint, tomask, frommask");
         return;
     }
 
@@ -24,6 +25,8 @@ fn main() {
         "mandelbrot" => mandelbrot(command_args),
         "julia" => julia(command_args),
         "translatepoint" => translatepoint(),
+        "tomask" => tomask(command_args),
+        "frommask" => frommask(command_args),
         #[cfg(target_os = "linux")]
         "ncurses" => ncurses(command_args),
         "highlight_countries" => _highlight_countries(command_args),
