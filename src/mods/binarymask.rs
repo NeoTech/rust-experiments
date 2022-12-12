@@ -60,7 +60,5 @@ fn test_frommask() {
     // Test that frommask returns 0,1,0 for the input "2"
     let args = vec!["2".to_string()];
     let result = frommask(&args);
-    println!("{:?}", result);
-    // assert_eq!(result, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]);
-    
+    assert_eq!(result, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]);
 }
