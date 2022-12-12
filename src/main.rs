@@ -25,8 +25,12 @@ fn main() {
         "mandelbrot" => mandelbrot(command_args),
         "julia" => julia(command_args),
         "translatepoint" => translatepoint(),
-        "tomask" => tomask(command_args),
-        "frommask" => frommask(command_args),
+        "tomask" => {
+            let _ = tomask(command_args);
+        },
+        "frommask" => {
+            let _  = frommask(command_args);
+        },
         #[cfg(target_os = "linux")]
         "ncurses" => ncurses(command_args),
         "highlight_countries" => _highlight_countries(command_args),

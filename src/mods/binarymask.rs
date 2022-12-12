@@ -1,7 +1,7 @@
-pub fn frommask(args: &[String]) {
+pub fn frommask(args: &[String]) -> String{
     if args.len() < 1 {
         eprintln!("Usage: <integer>");
-        return;
+        return "".to_string();
     }
     /* Function that convers a number to a array of 1 and 0 */
     println!("Converting {} to binary", args[0]);
@@ -16,13 +16,24 @@ pub fn frommask(args: &[String]) {
         b.insert(0, 0);
     }
     println!("{:?}", b);
+    /* Returns a comma seperated string from b. */    
+    let c = b.iter()
+        .map(|&i| i
+        .to_string())
+        .collect::<Vec<String>>()
+        .join(", ");
+    return c;
 }
 
-pub fn tomask(args: &[String]) {
+pub fn tomask(args: &[String]) -> u32 {
+    if args.len() < 1 {
+        eprintln!("Usage: <array of 1 and 0>");
+        return 0;
+    }
     /* Checks if argument contains anything else then 1 0 or , */
     if args[0].chars().any(|c| c != '0' && c != '1' && c != ',') {
         eprintln!("Usage: <array of 1 and 0>");
-        return;
+        return 0;
     }
     /* Function that convers a array of 1 and 0 to a number */
     /* ie 0,1,0 */
@@ -35,22 +46,26 @@ pub fn tomask(args: &[String]) {
             .to_string())
         .collect::<String>(), 2)
         .unwrap();
-    println!("{:?}", mask);
+    /* Return value and print it */
+    println!("Converting {:?} to integer", a);
+    println!("{}", mask);
+    return mask;
 }
 
 
 #[test]
 fn test_tomask() {
-    /* A test that passes the string 0,1,0 and checks that tomask returns 2. */
+    // Test that tomask returns 2 for the input "0,1,0"
     let args = vec!["0,1,0".to_string()];
-    tomask(&args);
-    assert_eq!(2, 2);
+    let result = tomask(&args);
+    assert_eq!(result, 2);
 }
 
 #[test]
 fn test_frommask() {
-    /* A test that passes the string 2 and checks that frommask returns 0,1,0. */
+    // Test that frommask returns 0,1,0 for the input "2"
     let args = vec!["2".to_string()];
-    frommask(&args);
-    assert_eq!(2, 2);
+    let result = frommask(&args);
+    assert_eq!(result, "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0".to_string());
+    
 }
