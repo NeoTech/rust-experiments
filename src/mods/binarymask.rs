@@ -21,13 +21,14 @@ pub fn frommask(args: &[String]) -> Vec<u32>{
 }
 
 pub fn tomask(args: &[String]) -> u32 {
+    let errormessage = "Usage: <array of 1 and 0>";
     if args.len() < 1 {
-        eprintln!("Usage: <array of 1 and 0>");
+        eprintln!("{}", errormessage);
         return 0;
     }
     /* Checks if argument contains anything else then 1 0 or , */
     if args[0].chars().any(|c| c != '0' && c != '1' && c != ',') {
-        eprintln!("Usage: <array of 1 and 0>");
+        eprintln!("{}", errormessage);
         return 0;
     }
     /* Function that convers a array of 1 and 0 to a number */
