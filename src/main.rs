@@ -21,7 +21,9 @@ fn main() {
         "greet" => greet(command_args),
         "add" => add(command_args),
         "sub" => sub(command_args),
-        "login" => login(command_args),
+        "login" => {
+            let _ = login(command_args);
+        },
         "mandelbrot" => mandelbrot(command_args),
         "julia" => julia(command_args),
         "translatepoint" => translatepoint(),

@@ -1,16 +1,40 @@
-pub fn login(args: &[String]) {
-    if args.len() < 2 {
-        eprintln!("Usage: login <username> <password>");
-        return;
-    }
+struct User {
+    username: String,
+    password: String,
+}
 
-    let username = &args[0];
-    let password = &args[1];
-    println!("Logging in as {} with password {}", username, password);
+impl User {
+    fn login(&self) -> bool {
+        /* Check username and passwords value */
+        if self.username == "admin" && self.password == "password" {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+
+/* A function that is public that uses the login struct to login a user. */
+pub fn login(args: &[String]) -> bool {
+    if args.len() < 2 {
+        eprintln!("Usage: <username> <password>");
+        return false;
+    }
+    let user = User {
+        username: args[0].clone(),
+        password: args[1].clone(),
+    };
+    return user.login();
 }
 
 #[test]
-fn login_test() {
-    let args = vec!["username".to_string(), "password".to_string()];
-    login(&args);
+fn test_login() {
+    // Test that login returns true for the input "admin admin"
+    let user = User {
+        username: "admin".to_string(),
+        password: "password".to_string(),
+    };
+    let result = user.login();
+    assert_eq!(result, true);
 }
