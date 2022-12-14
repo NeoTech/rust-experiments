@@ -16,6 +16,7 @@ rustls = "0.20.7"
 tokio = { version = "1.23.0", features = ["full"] }
 iced = { version = "0.6.0", features = ["image", "svg", "tokio"] }
 iced_native = "0.7.0"
+winit = "0.27.5"
 
 [target.'cfg(linux)'.dependencies]
 ncurses = "5.101.0"
@@ -37,5 +38,5 @@ name = "loopcli"
 path = "src/loopcli.rs"
 
 [[bin]]
-name = "windows"
+name = "iced"
 path = "src/iced_native.rs"
