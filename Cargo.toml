@@ -14,6 +14,8 @@ http = "0.2.4"
 reqwest = { version = "0.11.13", default_features = false, features = [ "rustls-tls", "json"] }
 rustls = "0.20.7"
 tokio = { version = "1.23.0", features = ["full"] }
+iced = { version = "0.6.0", features = ["image", "svg", "tokio"] }
+iced_native = "0.7.0"
 
 [target.'cfg(linux)'.dependencies]
 ncurses = "5.101.0"
@@ -33,3 +35,7 @@ path = "src/spotify.rs"
 [[bin]]
 name = "loopcli"
 path = "src/loopcli.rs"
+
+[[bin]]
+name = "windows"
+path = "src/iced_native.rs"
