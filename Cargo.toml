@@ -29,3 +29,7 @@ path = "src/json-convert.rs"
 [[bin]]
 name = "spotify"
 path = "src/spotify.rs"
+
+[[bin]]
+name = "loopcli"
+path = "src/loopcli.rs"
