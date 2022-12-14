@@ -17,19 +17,19 @@ fn main() {
 
         /* A match statement that uses input */
         match input.trim() {
-            "A" => {
+            "A"|"a" => {
                 let exec = options.get("option1").unwrap();
                 exec();
             },
-            "B" => {
-                let exec = options.get("option1").unwrap();
+            "B"|"b" => {
+                let exec = options.get("option2").unwrap();
                 exec();
             },
-            "C" => {
-                let exec = options.get("option1").unwrap();
+            "C"|"c" => {
+                let exec = options.get("option3").unwrap();
                 exec();
             }
-            "Q" => break,
+            "Q"|"q" => break,
             _ => println!("Invalid input"),
         }
         
@@ -48,11 +48,14 @@ fn print_menu(options: HashMap<&str, fn()>) {
 }
 
 fn option1() {
+    print!("{}[2J", 27 as char);
     println!("Option 1 selected");
 }
 fn option2() {
+    print!("{}[2J", 27 as char);
     println!("Option 2 selected");
 }
 fn option3() {
+    print!("{}[2J", 27 as char);
     println!("Option 3 selected");
 }
