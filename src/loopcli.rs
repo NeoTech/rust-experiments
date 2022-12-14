@@ -48,14 +48,37 @@ fn print_menu(options: HashMap<&str, fn()>) {
 }
 
 fn option1() {
-    print!("{}[2J", 27 as char);
+    print!("{}[2J", 27 as char); // Clear the screen
     println!("Option 1 selected");
+    let mut input = String::new();
+    stdin().read_line(&mut input).expect("Failed to read input");
+    loop {
+        match input.trim() {
+            "A"|"a" => {
+                println!("Option 1a selected");
+                break;
+            },
+            "B"|"b" => {
+                println!("Option 1b selected");
+                break;
+            },
+            "C"|"c" => {
+                println!("Option 1c selected");
+                break;
+            }
+            "Q"|"q" => break,
+            _ => {
+                println!("Invalid input");
+                break;
+            },
+        }
+    }
 }
 fn option2() {
-    print!("{}[2J", 27 as char);
+    print!("{}[2J", 27 as char); // Clear the screen
     println!("Option 2 selected");
 }
 fn option3() {
-    print!("{}[2J", 27 as char);
+    print!("{}[2J", 27 as char); // Clear the screen
     println!("Option 3 selected");
 }
