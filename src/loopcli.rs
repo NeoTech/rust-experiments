@@ -11,9 +11,10 @@ fn main() {
     
     // Print the menu and handle user input
     loop {
-        print_menu();
+        print_menu(options.clone());
         let mut input = String::new();
         stdin().read_line(&mut input).expect("Failed to read input");
+
         /* A match statement that uses input */
         match input.trim() {
             "A" => {
@@ -31,15 +32,16 @@ fn main() {
             "Q" => break,
             _ => println!("Invalid input"),
         }
-
+        
     }
 }
 
-fn print_menu() {
-    println!("A: Option 1");
-    println!("B: Option 2");
-    println!("C: Option 3");
-    println!("Q: Exit");
+fn print_menu(options: HashMap<&str, fn()>) {
+    let letters = ['A', 'B', 'C', 'Q'];
+    for(i, (key,_)) in options.iter().enumerate() {
+        println!("{}: {}", letters[i], key);
+    }
+    println!("Q: Quit");
     println!("-----");
     print!("> ");
     stdout().flush().unwrap();
