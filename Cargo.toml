@@ -48,3 +48,8 @@ path = "src/iced_native.rs"
 name = "windows-native"
 path = "src/windows-native.rs"
 
+[[bin]]
+name = "consoler"
+path = "src/consoler.rs"
+
+
