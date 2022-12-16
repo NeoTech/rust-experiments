@@ -195,15 +195,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fd16c4719339c4530435d38e511904438d07cce7950afa3718a84ac36c10e89e"
 
 [[package]]
-name = "cgl"
-version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0ced0551234e87afee12411d535648dd89d2e7f34c78b753395567aff3d447ff"
-dependencies = [
- "libc",
-]
-
-[[package]]
 name = "clipboard-win"
 version = "4.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -897,17 +888,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gl_generator"
-version = "0.14.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1a95dfc23a2b4a9a2f5ab41d194f8bfda3cabec42af4e39f08c339eb2a0c124d"
-dependencies = [
- "khronos_api",
- "log",
- "xml-rs",
-]
-
-[[package]]
 name = "glam"
 version = "0.21.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -935,58 +915,6 @@ dependencies = [
  "glow",
  "glyph_brush",
  "log",
-]
-
-[[package]]
-name = "glutin"
-version = "0.30.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "524d807cd49a0c56a53ef9a6738cd15e7c8c4e9d37a3b7fdb3c250c1cd5bf7a3"
-dependencies = [
- "bitflags",
- "cfg_aliases",
- "cgl",
- "cocoa",
- "core-foundation",
- "glutin_egl_sys",
- "glutin_glx_sys",
- "glutin_wgl_sys",
- "libloading",
- "objc",
- "once_cell",
- "raw-window-handle 0.5.0",
- "wayland-sys 0.30.1",
- "windows-sys 0.36.1",
- "x11-dl",
-]
-
-[[package]]
-name = "glutin_egl_sys"
-version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3adbb8fec0e18e340f990c78f79f5f0e142d0d83f46b10909aaa7d251c00afdf"
-dependencies = [
- "gl_generator",
- "windows-sys 0.36.1",
-]
-
-[[package]]
-name = "glutin_glx_sys"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "947c4850c58211c9627969c2b4e2674764b81ae5b47bab2c9a477d7942f96e0f"
-dependencies = [
- "gl_generator",
- "x11-dl",
-]
-
-[[package]]
-name = "glutin_wgl_sys"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "20c33975a6c9d49d72c8f032a60079bf8df536954fbf9e4cee90396ace815c57"
-dependencies = [
- "gl_generator",
 ]
 
 [[package]]
@@ -1459,12 +1387,6 @@ dependencies = [
  "libloading",
  "pkg-config",
 ]
-
-[[package]]
-name = "khronos_api"
-version = "3.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e2db585e1d738fc771bf08a151420d3ed193d9d895a36df7f6f8a9456b911ddc"
 
 [[package]]
 name = "kurbo"
@@ -2404,7 +2326,6 @@ name = "rust-cmd-cli"
 version = "0.1.0"
 dependencies = [
  "futures",
- "glutin",
  "http",
  "iced",
  "iced_native",
@@ -2417,7 +2338,6 @@ dependencies = [
  "serde_json",
  "tempfile",
  "tokio",
- "winit",
 ]
 
 [[package]]
@@ -3231,7 +3151,7 @@ dependencies = [
  "scoped-tls",
  "wayland-commons",
  "wayland-scanner",
- "wayland-sys 0.29.5",
+ "wayland-sys",
 ]
 
 [[package]]
@@ -3243,7 +3163,7 @@ dependencies = [
  "nix 0.24.3",
  "once_cell",
  "smallvec",
- "wayland-sys 0.29.5",
+ "wayland-sys",
 ]
 
 [[package]]
@@ -3288,18 +3208,6 @@ checksum = "be12ce1a3c39ec7dba25594b97b42cb3195d54953ddb9d3d95a7c3902bc6e9d4"
 dependencies = [
  "dlib",
  "lazy_static",
- "pkg-config",
-]
-
-[[package]]
-name = "wayland-sys"
-version = "0.30.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96b2a02ac608e07132978689a6f9bf4214949c85998c247abadd4f4129b1aa06"
-dependencies = [
- "dlib",
- "lazy_static",
- "log",
  "pkg-config",
 ]
 

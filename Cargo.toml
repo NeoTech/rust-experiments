@@ -16,8 +16,8 @@ rustls = "0.20.7"
 tokio = { version = "1.23.0", features = ["full"] }
 iced = { version = "0.6.0", features = ["image", "svg", "tokio"] }
 iced_native = "0.7.0"
-winit = "0.27.5"
-glutin = "0.30.3"
+# winit = "0.27.5"
+# glutin = "0.30.3"
 native-windows-gui = "1.0.13"
 native-windows-derive = "1.0.5"
 
